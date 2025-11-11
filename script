@@ -1,7 +1,6 @@
 # ======================================
 # 4) script spark_tron_pyspark.py
 # ======================================
-%%writefile spark_tron_full_optimized.py
 #!/usr/bin/env python3
 
 
