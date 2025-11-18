@@ -1,0 +1,36 @@
+
+import pyspark
+from pyspark.sql import functions as F
+from pyspark.sql.functions import col, count
+from pyspark import SparkConf
+from pyspark.sql import SparkSession
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+from pyspark.sql.types import (StructType, 
+                               StructField, 
+                               DateType, 
+                               BooleanType,
+                               DoubleType,
+                               IntegerType,
+                               StringType,
+                               TimestampType)
+
+#construct schema
+flight_schema = StructType([StructField("legId", StringType(), True),
+                            StructField("searchDate", StringType(), True),
+                            StructField("flightDate", DateType(), True),
+                            StructField("startingAirport", StringType(), True),
+                            StructField("destinationAirport", StringType(), True),
+                            StructField("fareBasisCode", StringType(), True),
+                            StructField("travelDuration", StringType(), True),
+                            StructField("elapsedDays", IntegerType(), True ),
+                            StructField("isBasicEconomy", BooleanType(), True),
+                            StructField("isRefundable", BooleanType(), True),
+                            StructField("isNonStop", BooleanType(), True),
+                            StructField("baseFare", DoubleType(), True),
+                            StructField("totalFare", DoubleType(), True),
+                            StructField("seatsRemaining", IntegerType(), True),
+                            StructField("totalTravelDistance", IntegerType(), True)
+                           
+                            ])
